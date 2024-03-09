@@ -1,5 +1,3 @@
-USE master;
-
 -- Crear la base de datos
 CREATE DATABASE trabajoEnClase;
 
@@ -59,9 +57,11 @@ CREATE TABLE Persona (
   Direccion VARCHAR(100) NOT NULL,
   Telefono VARCHAR(20) NOT NULL,
   ID_Rol INT NOT NULL,
+  ID_Estado_Usuario INT NOT NULL,
+  ID_Categoria INT NOT NULL,
   Correo VARCHAR(50) NOT NULL,
-  CONSTRAINT FK_Persona_Rol FOREIGN KEY (ID_Rol) REFERENCES Rol (ID_Rol)
-  CONSTRAINT FK_Persona_Estado FOREIGN KEY (ID_Estado_usuario) REFERENCES Estado_usuario (ID_Estado_pedido)
+  CONSTRAINT FK_Persona_Rol FOREIGN KEY (ID_Rol) REFERENCES Rol (ID_Rol),
+  CONSTRAINT FK_Persona_Estado FOREIGN KEY (ID_Estado_usuario) REFERENCES Estado_usuario (ID_Estado_usuario),
   CONSTRAINT FK_Persona_Categoria FOREIGN KEY (ID_Categoria) REFERENCES Categoria (ID_Categoria)
 );
 
