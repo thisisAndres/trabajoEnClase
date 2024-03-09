@@ -39,6 +39,18 @@ CREATE TABLE Rol (
   Nombre_Rol VARCHAR(50) NOT NULL
 );
 
+-- Crear la tabla Estado_usuario
+CREATE TABLE Estado_usuario (
+  ID_Estado_usuario INT NOT NULL PRIMARY KEY,
+  Nombre_estado VARCHAR(50) NOT NULL
+);
+
+-- Crear la tabla Categoria
+CREATE TABLE Categoria (
+  ID_Categoria INT NOT NULL PRIMARY KEY,
+  Nombre_categoria VARCHAR(50) NOT NULL
+);
+
 
 -- Crear la tabla Persona
 CREATE TABLE Persona (
@@ -89,19 +101,6 @@ CREATE TABLE Pedidos (
   CONSTRAINT FK_Pedidos_Persona FOREIGN KEY (ID_Persona) REFERENCES Persona (ID_Persona),
   CONSTRAINT FK_Pedidos_Producto FOREIGN KEY (ID_Producto) REFERENCES Productos (ID_Producto),
   CONSTRAINT FK_Pedidos_Estado_pedido FOREIGN KEY (ID_Estado_pedido) REFERENCES Estado_pedido (ID_Estado_pedido)
-);
-
-
--- Crear la tabla Estado_usuario
-CREATE TABLE Estado_usuario (
-  ID_Estado_usuario INT NOT NULL PRIMARY KEY,
-  Nombre_estado VARCHAR(50) NOT NULL
-);
-
--- Crear la tabla Categoria
-CREATE TABLE Categoria (
-  ID_Categoria INT NOT NULL PRIMARY KEY,
-  Nombre_categoria VARCHAR(50) NOT NULL
 );
 
 ---------------------------------------------------------------
